@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from getpass import getpass
 
-
 #Enter username and password between the quotations to auto log in 
 username = ""
 pw = ""
@@ -16,8 +15,6 @@ if username =="":
     username = input("Enter your BU username:")
 if pw =="":
     pw = getpass("Enter your password:")
-
-
 
 start = time.time()
 web = webdriver.Chrome()
@@ -41,19 +38,25 @@ login_button.click()
 
 print("Logging in...")
 
+# # #Click Survey Button
 
-#Click Survey Button
-survey_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ctl03"]/div[3]/div/a')))
+survey_button = wait.until(
+            EC.element_to_be_clickable((By.LINK_TEXT, 'Complete Survey'))
+        )
+
 survey_button.click()
 
 #Click Continue Button
 time.sleep(0.5)
-continue_button = web.find_element_by_xpath('//*[@id="mainbody"]/div[2]/div[1]/div/div[2]/a')
+continue_button = wait.until(
+            EC.presence_of_element_located((By.XPATH,'//*[@id="mainbody"]/div[2]/div[1]/div/div[2]/a'))
+        )
 continue_button.click()
 
 
-time.sleep(0.5)
+
 #Survey Questions
+time.sleep(0.5)
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[2]/fieldset/div/div[1]/div').click()
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[3]/fieldset/div/div[1]/div').click()
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[4]/fieldset/div/div[1]/div').click()
@@ -63,13 +66,8 @@ web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[7]/fieldset/div/div
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[8]/fieldset/div/div[1]/div').click()
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[9]/fieldset/div/div[1]/div').click()
 print('Survey Complete')
+
 #Submit Survey
 web.find_element_by_xpath('//*[@id="mainbody"]/footer/div/div[2]/input').click()
 print('Survey Submitted')
 print('This took: %.2f seconds' % (time.time()-start))
-
-
-
-
-
-
