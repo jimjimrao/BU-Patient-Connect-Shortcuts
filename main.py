@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import selenium, time
+import selenium, time, os, platform
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -16,8 +16,19 @@ if username =="":
 if pw =="":
     pw = getpass("Enter your password:")
 
+#check operating system (windows or mac)
+osys = platform.system()
+
+if osys == 'Windows':
+    PATH = "C:\Program Files (x86)\ChromeDriver\chromedriver.exe"
+    web = webdriver.Chrome(PATH)
+
+elif osys == 'Darwin':
+    web = webdriver.Chrome()
+# make sure this path is correct
+
 start = time.time()
-web = webdriver.Chrome()
+
 web.get('https://www.bu.edu/shs/getting-started/using-patient-connect/')
 wait = WebDriverWait(web,10)
 
