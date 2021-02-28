@@ -6,10 +6,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from getpass import getpass
+import info 
 
 #Enter username and password between the quotations to auto log in 
-username = ""
-pw = ""
+username = info.username
+pw = info.password
 
 if username =="":
     username = input("Enter your BU username:")
