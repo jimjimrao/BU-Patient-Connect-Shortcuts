@@ -1,16 +1,21 @@
 #!/usr/bin/env python
-import selenium
+import selenium, time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time, pyautogui
-
-
-username = input("Enter your BU username:")
 from getpass import getpass
-pw = getpass("Enter your password:")
+
+
+#Enter username and password between the quotations to auto log in 
+username = ""
+pw = ""
+
+if username =="":
+    username = input("Enter your BU username:")
+if pw =="":
+    pw = getpass("Enter your password:")
 
 
 
