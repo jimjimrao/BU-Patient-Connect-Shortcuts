@@ -20,8 +20,9 @@ if pw =="":
 osys = platform.system()
 
 if osys == 'Windows':
-    PATH = "C:\Program Files (x86)\ChromeDriver\chromedriver.exe"
-    web = webdriver.Chrome(PATH)
+    # PATH = "C:\Program Files (x86)\ChromeDriver\chromedriver.exe"
+    # web = webdriver.Chrome(PATH)
+    web = webdriver.Chrome('chromedriver.exe')
 
 elif osys == 'Darwin':
     web = webdriver.Chrome()
