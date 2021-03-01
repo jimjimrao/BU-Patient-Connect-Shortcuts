@@ -8,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from getpass import getpass
 import info 
 
-#Enter username and password between the quotations to auto log in 
 username = info.username
 pw = info.password
 
@@ -24,6 +23,7 @@ if osys == 'Windows':
     # PATH = "C:\Program Files (x86)\ChromeDriver\chromedriver.exe"
     # web = webdriver.Chrome(PATH)
     web = webdriver.Chrome('chromedriver.exe')
+    
 
 elif osys == 'Darwin':
     web = webdriver.Chrome()
