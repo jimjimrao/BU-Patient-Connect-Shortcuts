@@ -13,4 +13,4 @@ password = ""
 
 # ('choice = 0' means you want 808 Gallery to be your default testing site) 
 
-choice = 0
+choice = ""

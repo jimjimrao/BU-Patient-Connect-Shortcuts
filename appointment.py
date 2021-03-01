@@ -10,12 +10,20 @@ import info
 
 username = info.username
 pw = info.password
+testing_centers = ['808 Gallery-808 Comm Ave','Agganis Lobby-925 Comm Ave','BUMC-72 E Concord St','Kilachand-610 Comm Ave']
 
 if username =="":
     username = input("Enter your BU username:")
 if pw =="":
     pw = getpass("Enter your password:")
 
+if info.choice not in [0,1,2,3]:
+    x = int(input("Choose your testing center by typing the corresponding number:  \n 0 = 808 Gallery-808 Comm Ave \n 1 = Agganis Lobby-925 Comm Ave \n 2 = BUMC-72 E Concord St  \n 3 = Kilachand-610 Comm Ave \n "))
+    center_select = testing_centers[x]
+else:
+    center_select = testing_centers[info.choice]
+
+print(center_select)
 #check operating system (windows or mac)
 osys = platform.system()
 
@@ -99,9 +107,6 @@ wait.until(
     EC.element_to_be_clickable((By.XPATH, '//*[@id="cmdStandardProceed"]'))
     ).click()
 
-testing_centers = ['808 Gallery-808 Comm Ave','Agganis Lobby-925 Comm Ave','BUMC-72 E Concord St','Kilachand-610 Comm Ave']
-center_select = testing_centers[info.choice]
-print(center_select)
 wait.until(
     EC.element_to_be_clickable((By.XPATH, "//*[@id='LocationList']/option[text() ='"+center_select+"']"))
     ).click()
