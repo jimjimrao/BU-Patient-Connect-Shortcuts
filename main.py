@@ -84,3 +84,6 @@ print('Survey Complete')
 web.find_element_by_xpath('//*[@id="mainbody"]/footer/div/div[2]/input').click()
 print('Survey Submitted')
 print('This took: %.2f seconds' % (time.time()-start))
+
+time.sleep(1.0)
+web.quit()
