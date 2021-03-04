@@ -23,19 +23,17 @@ if info.choice not in [0,1,2,3]:
 else:
     center_select = testing_centers[info.choice]
 
-print(center_select)
+print('Searching for appointments @:', center_select)
 #check operating system (windows or mac)
 osys = platform.system()
 
+#choose correct chromedriver 
 if osys == 'Windows':
-    # PATH = "C:\Program Files (x86)\ChromeDriver\chromedriver.exe"
-    # web = webdriver.Chrome(PATH)
     web = webdriver.Chrome('chromedriver.exe')
     
-
 elif osys == 'Darwin':
-    web = webdriver.Chrome()
-# make sure this path is correct
+    web = webdriver.Chrome('chromedriver')
+
 
 start = time.time()
 
