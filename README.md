@@ -26,6 +26,7 @@ $ pip install -r requirements.txt
 Now you can run the script from the directory. 
 
 ### Optional:
+#### Auto-login
 If you want to speed up the process, you can fill in the info.py file with your BU login and password and select your preferred testing center. 
 
 Example of info.py: 
@@ -47,3 +48,13 @@ password = "Terrier"
 
 choice = "1"
 ```
+
+#### Make the script into a clickable executable (Mac)
+
+Change the extension of the script file to ".command" i.e. survey.command
+
+In Terminal make the Python script file executable by running: 
+```
+chmod +x survey.command
+```
+Now when you double click the Python script in Finder it will open a terminal window and run.
