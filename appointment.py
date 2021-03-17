@@ -112,5 +112,10 @@ wait.until(
     EC.element_to_be_clickable((By.XPATH, '//*[@id="apptSearch"]'))
     ).click()
 
-time.sleep(30)
 
+#Wait for Success Page
+wait.until(EC.visibility_of_element_located((By.XPATH,'/html/body/div[2]/div/div[2]/h1')))
+title = web.find_element_by_xpath('/html/body/div[2]/div/div[2]/h1')
+while title.text != "All Done!":
+    time.sleep(1)
+web.quit()
