@@ -29,14 +29,8 @@ elif osys == 'Darwin':
 
 start = time.time()
 
-web.get('https://www.bu.edu/shs/getting-started/using-patient-connect/')
 wait = WebDriverWait(web,10)
-
-wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="post-7513"]/p[2]/a'))).click()
-
-#switch tabs 
-web.switch_to.window(web.window_handles[1])
-
+web.get('https://patientconnect.bu.edu')
 #Log in Screen
 username_input = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="j_username"]')))
 username_input.send_keys(username)
