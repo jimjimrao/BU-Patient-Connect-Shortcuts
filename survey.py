@@ -69,14 +69,16 @@ web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[5]/fieldset/div/div
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[6]/fieldset/div/div[1]/div').click()
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[7]/fieldset/div/div[1]/div').click()
 web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[8]/fieldset/div/div[1]/div').click()
-web.find_element_by_xpath('//*[@id="mainbody"]/main/form/div[9]/fieldset/div/div[1]/div').click()
 print('Survey Complete')
 
 #Submit Survey
-web.find_element_by_xpath('//*[@id="mainbody"]/footer/div/div[2]/input').click()
+
+web.find_element_by_xpath('/html/body/div[2]/div/div[2]/header/div/div[2]/input').click()
 print('Survey Submitted')
 print('This took: %.2f seconds' % (time.time()-start))
 
 web.find_element_by_xpath('//*[@id="ctl03"]/div[2]/p[1]')
 time.sleep(1.0)
 web.quit()
+
+
