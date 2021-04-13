@@ -73,7 +73,7 @@ print('Survey Complete')
 
 #Submit Survey
 
-web.find_element_by_xpath('/html/body/div[2]/div/div[2]/header/div/div[2]/input').click()
+web.find_element_by_xpath('//*[@id="mainbody"]/footer/div/div[2]/input').click()
 print('Survey Submitted')
 print('This took: %.2f seconds' % (time.time()-start))
 
